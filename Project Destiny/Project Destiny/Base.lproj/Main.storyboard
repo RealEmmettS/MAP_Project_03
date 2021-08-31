@@ -22,44 +22,47 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zxK-El-pDG">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="zxK-El-pDG">
                                 <rect key="frame" x="60" y="157" width="294" height="496"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <mutableString key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</mutableString>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <color key="textColor" systemColor="labelColor"/>
                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="16"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fth-HW-1RG">
-                                <rect key="frame" x="226" y="727" width="61" height="30"/>
-                                <state key="normal" title="Choice 2"/>
-                                <connections>
-                                    <action selector="choice2:" destination="BYZ-38-t0r" eventType="touchUpInside" id="jle-ft-n0g"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8qx-BT-QWJ">
-                                <rect key="frame" x="120" y="727" width="59" height="30"/>
-                                <state key="normal" title="Choice 1"/>
-                                <connections>
-                                    <action selector="choice1:" destination="BYZ-38-t0r" eventType="touchUpInside" id="L6X-op-nkv"/>
-                                </connections>
-                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="174" translatesAutoresizingMaskIntoConstraints="NO" id="ODO-Sz-n6R">
+                                <rect key="frame" x="60" y="743" width="294" height="30"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8qx-BT-QWJ">
+                                        <rect key="frame" x="0.0" y="0.0" width="59" height="30"/>
+                                        <state key="normal" title="Choice 1"/>
+                                        <connections>
+                                            <action selector="choice1:" destination="BYZ-38-t0r" eventType="touchUpInside" id="L6X-op-nkv"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fth-HW-1RG">
+                                        <rect key="frame" x="233" y="0.0" width="61" height="30"/>
+                                        <state key="normal" title="Choice 2"/>
+                                        <connections>
+                                            <action selector="choice2:" destination="BYZ-38-t0r" eventType="touchUpInside" id="jle-ft-n0g"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="zxK-El-pDG" firstAttribute="top" secondItem="5V4-Nj-2rC" secondAttribute="bottom" constant="48" id="1vJ-cf-B0G"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="zxK-El-pDG" secondAttribute="trailing" constant="60" id="2k5-9j-koC"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="fth-HW-1RG" secondAttribute="trailing" constant="127" id="JgQ-iR-hn5"/>
-                            <constraint firstItem="fth-HW-1RG" firstAttribute="centerY" secondItem="8qx-BT-QWJ" secondAttribute="centerY" id="MW6-bS-kam"/>
-                            <constraint firstItem="5V4-Nj-2rC" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="60" id="UBR-KJ-wiL"/>
-                            <constraint firstItem="fth-HW-1RG" firstAttribute="leading" secondItem="8qx-BT-QWJ" secondAttribute="trailing" constant="47" id="WiW-Is-UvF"/>
-                            <constraint firstItem="8qx-BT-QWJ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="120" id="ZJq-ga-R8H"/>
-                            <constraint firstItem="zxK-El-pDG" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="60" id="eir-Go-vTp"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="8qx-BT-QWJ" secondAttribute="bottom" constant="105" id="syM-BQ-g2k"/>
+                            <constraint firstItem="ODO-Sz-n6R" firstAttribute="top" secondItem="zxK-El-pDG" secondAttribute="bottom" constant="90" id="2l7-xy-TSI"/>
+                            <constraint firstItem="5V4-Nj-2rC" firstAttribute="leading" secondItem="zxK-El-pDG" secondAttribute="leading" id="4ns-A7-Y4E"/>
+                            <constraint firstItem="ODO-Sz-n6R" firstAttribute="leading" secondItem="zxK-El-pDG" secondAttribute="leading" id="Moz-qA-ExS"/>
+                            <constraint firstItem="zxK-El-pDG" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="TLE-Sk-JC5"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="ODO-Sz-n6R" secondAttribute="bottom" constant="89" id="Xjf-5B-XwK"/>
+                            <constraint firstItem="5V4-Nj-2rC" firstAttribute="bottom" secondItem="zxK-El-pDG" secondAttribute="top" constant="-48" id="aPI-G1-3Be"/>
+                            <constraint firstItem="ODO-Sz-n6R" firstAttribute="trailing" secondItem="zxK-El-pDG" secondAttribute="trailing" id="eax-n8-9qb"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="5V4-Nj-2rC" secondAttribute="trailing" constant="60" id="vyL-xj-VZw"/>
-                            <constraint firstItem="8qx-BT-QWJ" firstAttribute="top" secondItem="zxK-El-pDG" secondAttribute="bottom" constant="74" id="wev-vd-rOJ"/>
                             <constraint firstItem="5V4-Nj-2rC" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="30" id="x0T-2R-CDt"/>
+                            <constraint firstItem="ODO-Sz-n6R" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="y5K-Ig-nt5"/>
                         </constraints>
                     </view>
                     <connections>
