@@ -14,6 +14,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var choice1: UIButton!
     @IBOutlet weak var choice2: UIButton!
     
+    
     //MARK:- Story Functions
     ///Updates the Room Label
     func updateRoom(newRoomName room: String){
@@ -24,6 +25,21 @@ class ViewController: UIViewController {
             choice2.isEnabled = false
         }else{
             choice2.isEnabled = true
+        }
+        
+        if room.lowercased() == "deep forest" || room.lowercased() == "dark cave"{
+            if #available(iOS 13.0, *) {
+                UIView.transition (with: self.view, duration: 0.3, options: .transitionCrossDissolve, animations: {
+                    self.overrideUserInterfaceStyle = .dark //.light or .unspecified
+                    }, completion: nil)
+            }
+        }else{
+            if #available(iOS 13.0, *) {
+                UIView.transition (with: self.view, duration: 0.3, options: .transitionCrossDissolve, animations: {
+                    self.overrideUserInterfaceStyle = .light //.light or .unspecified
+                    }, completion: nil)
+
+            }
         }
     }
     
