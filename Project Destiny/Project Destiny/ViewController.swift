@@ -19,10 +19,12 @@ class ViewController: UIViewController {
     ///Updates the Room Label
     func updateRoom(newRoomName room: String){
         roomLabel.text = "Room: \(room)"
+        roomLabel.textColor = .label
         
         if room.lowercased() == "main" || room.lowercased() == "complete"{
             choice2.setTitle("<-------", for: .disabled)
             choice2.isEnabled = false
+            roomLabel.textColor = .red
         }else{
             choice2.isEnabled = true
         }
@@ -99,32 +101,21 @@ class ViewController: UIViewController {
     ///The first choice links to even numbered rooms, and the second choice links to odd numbered rooms
     func updateStory(choice: Int){
         
-        print("Current Room Number: \(currentRoom)")
-        
-        if (roomLabel.text == "Room: Main"){
-            currentRoom = 0
-            print("\nSkipping switch statement...\n")
-        }else{
-            print("Running switch statement...")
-            switch choice{
-            case 1:
-                print("Choice 1")
-                currentRoom += 1
-            case 2:
-                print("Choice 2")
-                currentRoom += 2
-            default:
-                print("No choice. This is the default")
-            }
+        switch choice {
+        case 1:
+            currentRoom = stories[currentRoom].choice1Index
+        case 2:
+            currentRoom = stories[currentRoom].choice2Index
+        default:
+            print("Something went wrong")
         }
         
-        if currentRoom <= (stories.count-1) {
-            let newStory = stories[currentRoom]
-            print("Changing to the \(newStory.name)")
-            changeRoom(newRoomName: newStory.name, roomDescription: newStory.desc, firstChoice: newStory.choice1, secondChoice: newStory.choice2)
-        }else{
-            restartRooms(completed: true)
-        }
+    
+        
+        let newStory = stories[currentRoom]
+        print("Changing to the \(newStory.name)")
+        
+        changeRoom(newRoomName: newStory.name, roomDescription: newStory.desc, firstChoice: newStory.choice1, secondChoice: newStory.choice2)
         
         
         
